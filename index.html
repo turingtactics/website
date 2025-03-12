@@ -47,10 +47,13 @@
             100% { background-position: 0% 50%; }
         }
         .subtitle {
-            font-size: 2vw;
-            font-weight: 300;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 3vw;
+            text-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+            background: linear-gradient(90deg, #8a8a8a, #b0b0b0, #3c3c5c, #1a1a3c, #000022, #1a1a3c, #3c3c5c, #b0b0b0, #8a8a8a);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 5s infinite linear;
             margin-top: 10px;
         }
         .content {
