@@ -36,7 +36,7 @@
             filter: blur(15px);
             border-radius: 50%;
             pointer-events: none;
-            animation: moveLight 10s infinite linear alternate;
+            transition: transform 0.1s ease-out;
         }
 
         /* The animation that moves the light dynamically */
@@ -61,18 +61,6 @@
                 transform: translate(90vw, 90vh);
                 opacity: 1;
             }
-        }
-
-        /* Moving light inside header */
-        .moving-light {
-            position: absolute;
-            width: 80px; /* Medium size */
-            height: 80px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0) 80%);
-            filter: blur(20px);
-            border-radius: 50%;
-            pointer-events: none;
-            transition: transform 0.1s ease-out;
         }
         .moving-light.second {
             animation-delay: 0.3s;
