@@ -66,28 +66,28 @@
         /* Moving light inside header */
         .moving-light {
             position: absolute;
-            width: 70px; /* Slightly larger for better visibility */
-            height: 70px;
+            width: 80px; /* Medium size */
+            height: 80px;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0) 80%);
             filter: blur(20px);
             border-radius: 50%;
             pointer-events: none;
-            animation: moveLight 25s infinite linear alternate;
+            animation: moveLight 20s infinite linear alternate;
         }
 
-        /* Now the light moves across the ENTIRE width and height */
+        /* Randomized, large, full-range movement inside the header */
         @keyframes moveLight {
-            0% { transform: translate(0vw, 0vh); opacity: 0.8; }
-            10% { transform: translate(90vw, 10vh); opacity: 0.6; }
-            20% { transform: translate(70vw, 80vh); opacity: 0.9; }
-            30% { transform: translate(20vw, 50vh); opacity: 0.5; }
-            40% { transform: translate(100vw, 90vh); opacity: 0.7; }
-            50% { transform: translate(60vw, 10vh); opacity: 0.6; }
-            60% { transform: translate(10vw, 80vh); opacity: 0.8; }
-            70% { transform: translate(90vw, 40vh); opacity: 0.5; }
-            80% { transform: translate(50vw, 100vh); opacity: 0.9; }
-            90% { transform: translate(0vw, 50vh); opacity: 0.7; }
-            100% { transform: translate(100vw, 0vh); opacity: 0.6; }
+            0%   { transform: translate(5vw, 5vh); opacity: 0.8; }
+            10%  { transform: translate(85vw, 15vh); opacity: 0.6; }
+            20%  { transform: translate(75vw, 75vh); opacity: 0.9; }
+            30%  { transform: translate(15vw, 60vh); opacity: 0.5; }
+            40%  { transform: translate(90vw, 85vh); opacity: 0.7; }
+            50%  { transform: translate(50vw, 50vh); opacity: 0.6; }
+            60%  { transform: translate(20vw, 80vh); opacity: 0.8; }
+            70%  { transform: translate(80vw, 30vh); opacity: 0.5; }
+            80%  { transform: translate(40vw, 90vh); opacity: 0.9; }
+            90%  { transform: translate(10vw, 50vh); opacity: 0.7; }
+            100% { transform: translate(95vw, 10vh); opacity: 0.6; }
         }
         header {
             height: 100vh;
