@@ -24,9 +24,9 @@ header {
     width: 100%;
 }
 h1 {
-    font-size: 8vw;
-    text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
-    background: linear-gradient(90deg, #a0a0a0, #e6e6e6, #ffffff, #b0b0b0, #7f7f7f, #ffffff, #e6e6e6, #a0a0a0);
+    font-size: 9vw;
+    text-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    background: linear-gradient(90deg, #8a8a8a, #b0b0b0, #3c3c5c, #1a1a3c, #000022, #1a1a3c, #3c3c5c, #b0b0b0, #8a8a8a);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
