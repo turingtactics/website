@@ -63,30 +63,31 @@
             }
         }
 
+        /* Moving light inside header */
         .moving-light {
             position: absolute;
-            width: 50px; /* Smaller for a subtle effect */
-            height: 50px;
+            width: 70px; /* Slightly larger for better visibility */
+            height: 70px;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0) 80%);
-            filter: blur(15px);
+            filter: blur(20px);
             border-radius: 50%;
             pointer-events: none;
-            animation: moveLight 30s infinite linear alternate;
+            animation: moveLight 25s infinite linear alternate;
         }
 
-        /* More random, large, non-repeating movement */
+        /* Now the light moves across the ENTIRE width and height */
         @keyframes moveLight {
-            0% { transform: translate(5%, 10%); opacity: 0.8; }
-            10% { transform: translate(80%, 20%); opacity: 0.6; }
-            20% { transform: translate(40%, 70%); opacity: 0.9; }
-            30% { transform: translate(15%, 40%); opacity: 0.5; }
-            40% { transform: translate(85%, 10%); opacity: 0.7; }
-            50% { transform: translate(60%, 60%); opacity: 0.6; }
-            60% { transform: translate(30%, 90%); opacity: 0.8; }
-            70% { transform: translate(70%, 50%); opacity: 0.5; }
-            80% { transform: translate(10%, 80%); opacity: 0.9; }
-            90% { transform: translate(50%, 30%); opacity: 0.7; }
-            100% { transform: translate(90%, 90%); opacity: 0.6; }
+            0% { transform: translate(0vw, 0vh); opacity: 0.8; }
+            10% { transform: translate(90vw, 10vh); opacity: 0.6; }
+            20% { transform: translate(70vw, 80vh); opacity: 0.9; }
+            30% { transform: translate(20vw, 50vh); opacity: 0.5; }
+            40% { transform: translate(100vw, 90vh); opacity: 0.7; }
+            50% { transform: translate(60vw, 10vh); opacity: 0.6; }
+            60% { transform: translate(10vw, 80vh); opacity: 0.8; }
+            70% { transform: translate(90vw, 40vh); opacity: 0.5; }
+            80% { transform: translate(50vw, 100vh); opacity: 0.9; }
+            90% { transform: translate(0vw, 50vh); opacity: 0.7; }
+            100% { transform: translate(100vw, 0vh); opacity: 0.6; }
         }
         header {
             height: 100vh;
