@@ -28,6 +28,55 @@
           display: block;
           height: 50px;
         }
+        .moving-light {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 80%);
+            filter: blur(15px);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: moveLight 10s infinite linear alternate;
+        }
+
+        /* The animation that moves the light dynamically */
+        @keyframes moveLight {
+            0% {
+                transform: translate(10vw, 10vh);
+                opacity: 1;
+            }
+            25% {
+                transform: translate(80vw, 20vh);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translate(50vw, 70vh);
+                opacity: 0.6;
+            }
+            75% {
+                transform: translate(20vw, 50vh);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(90vw, 90vh);
+                opacity: 1;
+            }
+        }
+
+        /* Creating a subtle fading tail */
+        .moving-light::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0) 80%);
+            filter: blur(30px);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+        }
         header {
             height: 100vh;
             display: flex;
