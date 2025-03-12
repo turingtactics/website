@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,6 +11,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
 body::after {
   content: '';
   display: block;
@@ -23,20 +25,27 @@ header {
     background: linear-gradient(135deg, #1a1a1a, #4d4d4d);
     width: 100%;
 }
+/* Turing Tactics Text Styles */
 h1 {
     font-size: 8vw;
     text-shadow: 0px 0px 10px rgba(255,255,255,0.8);
-    background: linear-gradient(90deg, #a0a0a0, #e6e6e6, #ffffff, #b0b0b0, #7f7f7f, #ffffff, #e6e6e6, #a0a0a0);
+    background: linear-gradient(90deg, #c0c0c0, #ffffff, #dcdcdc, #708090, #1c1c3c, #708090, #dcdcdc, #ffffff, #c0c0c0);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: glow 5s infinite linear;
 }
+
+/* Text Gradient Animation */
 @keyframes glow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+
+/* Content and Panels */
+
 .content {
     display: flex;
     justify-content: center;
