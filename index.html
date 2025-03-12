@@ -74,6 +74,9 @@
             pointer-events: none;
             animation: moveLight 20s infinite linear alternate;
         }
+        .moving-light.second {
+            animation-delay: 5s; /* Delays start by 5 seconds */
+        }
 
         @keyframes moveLight {
             0%   { transform: translate(-5vw, -15vh); opacity: 0.8; }
@@ -173,11 +176,11 @@
 <article>
     <header>
         <div class="moving-light"></div>
+        <div class="moving-light second"></div>
         <div>
             <h1>Turing Tactics</h1>
             <h2 class="subtitle">- autonomous AI agents for<br>dynamic environments</h2>
         </div>
-        <div class="moving-light"></div>
 
     </header>
     <div class="content">
