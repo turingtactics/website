@@ -1,40 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What can I do for you? - Turing Tactics</title>
-    <link rel="stylesheet" href="style.css">
+    <title>About you - Turing Tactics</title>
+    <link href="./page1_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./page1_files/main.css">
+    <style>
+        footer {
+            clear: both;
+            position: relative;
+            height: 50px;
+            margin-top: -1px;
+            background-color: #111;
+            color: white;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Ready to explore the potential of autonomous AI agents?</h1>
-        <p>Do you also want to learn about it? Or you just want to use it to add value?</p>
-    </header>
+<header class="header">
+    <div class="container">
+        <div class="header-menu">
+            <button aria-label="hamburger menu" type="button" class="header-menu-switch js-toggle-mobile-menu button">
+                <svg class="icon icon-menu">
+                    <use xlink:href="#icon-menu"></use>
+                </svg>
+            </button>
 
-    <main>
-        <section>
-            <h2>Through workshops</h2>
-            <p>Do you have an active data science team who want to learn more about reinforcement learning and how it can add value? I give workshops either in-house or online.</p>
-        </section>
+            <nav class="header-menu-title">
+                <a href="index.html" class="header-menu-title-item is-active">Home</a>
+                <a href="reinforcement-learning.html" class="header-menu-title-item">Reinforcement learning</a>
+                <a href="applied-reinforcement-learning.html" class="header-menu-title-item">Applied reinforcement learning</a>
+                <a href="about-me.html" class="header-menu-title-item">About me</a>
+                <a href="about-you.html" class="header-menu-title-item is-active">About you</a>
+                <a href="mailto:turingtactis@gmail.com" class="header-menu-title-item">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<main class="main">
+    <article class="blog-detail">
+        <div class="container">
+            <header>
+                <h1 class="blog-detail-title">Ready to explore its potential?</h1>
+            </header>
+            <div class="wysiwyg">
+                <h2>Through workshops</h2>
+                <p>Do you have an active data science team who want to learn more about reinforcement learning and how it can add value? I give workshops either in-house or online.</p>
+                <h2>Through consults</h2>
+                <p>Do you need advice about whether and to implement reinforcement learning in your organisation? I do consultations either in-house or online.</p>
+                <h2>Through projects</h2>
+                <p>Do you want immediate implementation of reinforcement learning on your business case? I can set up a quick proof-of-concept of an autonomous AI agent in your project for you to see with your own eyes what its potential is.</p>
+            </div>
+        </div>
+    </article>
+</main>
 
-        <section>
-            <h2>Through consults</h2>
-            <p>Do you need advice about whether and to implement reinforcement learning in your organisation? I do consultations either in-house or online.</p>
-        </section>
-
-        <section>
-            <h2>Through projects</h2>
-            <p>Do you want immediate implementation of reinforcement learning on your business case? I can set up a quick proof-of-concept of an autonomous AI agent in your project for you to see with your own eyes what its potential is.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Turing Tactics</p>
-        <a href="index.html">Home</a>
-        <a href="reinforcement-learning.html">Reinforcement learning</a>
-        <a href="applied-reinforcement-learning.html">Cases</a>
-        <a href="about-me.html">About me</a>
-    </footer>
+<footer>
+    <p><br>&copy; 2025 Turing Tactics</p>
+</footer>
 </body>
 </html>
+
