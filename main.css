@@ -37,7 +37,24 @@ pre {
 }
 
 a {
+    font-size: 1.5rem;
 	background-color: transparent
+	transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #A7DFAE;
+}
+
+b {
+    color: #A7DFAE;
+    font-size: 1.5rem;
+	background-color: transparent
+	transition: background-color 0.3s ease;
+}
+
+b:hover {
+  background-color: #B0B0B0;
 }
 
 abbr[title] {
