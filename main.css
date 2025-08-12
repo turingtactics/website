@@ -13,3 +13,17 @@ h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visi
 .text-left main { align-items: flex-start !important; text-align: left !important; }
 /* Ensure generic h1 inside article is left */
 .text-left article h1 { text-align: left !important; }
+
+
+/* Language toggle: opposite colors to normal nav */
+/* Language link uses opposite colors of main nav */
+nav a.lang-switch{
+  color:#A7DFAE}abbr[title]{border-bottom:none !important;
+  background:transparent !important;
+  text-decoration:none;
+  padding:2px 6px;border-radius:4px;
+}
+nav a.lang-switch:hover{
+  background-color:#EDF8EE !important;
+  color:white !important;
+}
