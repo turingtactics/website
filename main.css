@@ -199,10 +199,12 @@ footer {
 }
 
 .blog-detail .contenttext p {
-  line-height: 1.5;
-  margin-bottom: 24px;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
-
+.blog-detail .contenttext li {
+  line-height: 1.7;
+}
 .blog-detail .contenttext img {
   display: block;
   margin-left: auto;
