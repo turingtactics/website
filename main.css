@@ -179,7 +179,7 @@ footer {
 }
 
 /* =========================================================
-   6) Blog / WYSIWYG
+   6) Blog / CONTENTTEXT
    ========================================================= */
 .blog-detail {
   padding-right: 0;
@@ -191,30 +191,30 @@ footer {
   font-size: 2em;
 }
 
-.blog-detail .wysiwyg p {
+.blog-detail .contenttext p {
   line-height: 1.5;
   margin-bottom: 24px;
 }
 
-.blog-detail .wysiwyg img {
+.blog-detail .contenttext img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
 }
 
-.blog-detail .wysiwyg h2 { margin-bottom: 20px; }
+.blog-detail .contenttext h2 { margin-bottom: 20px; }
 
 /* Consolidated blog hover states (kept specificity broad) */
 .blog-detail a:hover,
-.wysiwyg a:hover,
-.blog .wysiwyg a:hover {
+.contenttext a:hover,
+.blog .contenttext a:hover {
   background-color: #838483;
 }
 
-.blog .wysiwyg p,
+.blog .contenttext p,
 .blog .blog-detail-title,
-.blog .wysiwyg a { color: #838483; }
+.blog .contenttext a { color: #838483; }
 
 /* =========================================================
    7) Utility / Alignment helpers
@@ -224,7 +224,7 @@ footer {
   text-align: left !important;
 }
 
-.text-left .wysiwyg {
+.text-left .contenttext {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
