@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><link href="main.css" rel="stylesheet"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About You - Turing Tactics</title>
+</head>
+<body class="text-left blog">
+<header><a href="index.html"><img alt="Site Logo" class="site-logo" src="logo.png"/></a>
+<nav>
+<a href="index.html">Home</a> |
+<a href="pitch.html">Pitch</a> |
+<a href="technology.html" style="background-color: #A7DFAE;">The Technology</a> |
+<a href="in-depth.html">In-Depth</a> |
+<a href="about-me.html">About Me</a> |
+<a href="about-you.html">About You</a> |
+<a class="lang-switch" href="technology-nl.html">Nederlands</a> |
+<a href="mailto:turingtactis@gmail.com">Contact</a>
+</nav>
+</header>
+<main class="main">
+<article class="blog-detail">
+<div class="container">
+<header>
+<h1 class="blog-detail-title">The technology</h1>
+</header>
+<div class="contenttext">
+<p>So, let’s dive into this. I’ll try to be concise! I’ll start with the main take-away: RL is used to build <b>autonomous AI agents for dynamic environments</b>.</p>
+
+<p>Let’s use an example. The concepts can be used for logistics optimizations, virtual gaming agents, online recommendations, etc. But for clarity, imagine a robot vacuum (let’s call it <b>Pumba</b>), deciding where to clean next. RL has three parts:</p>
+
+<p><li><b>Agents:</b> AI decision-makers</li>
+  &emsp;&emsp;Pumba!</br></p>
+<p><li><b>Environment:</b> The space where agents act (physical or virtual)</li>
+  &emsp;&emsp;A living room</br></p>
+<p><li><b>Rewards:</b> Signals that tell the agent what’s good or bad:  </br></li>
+  &emsp;&emsp;Every time it gets a part from dirty to clean: +1 point </br>
+  &emsp;&emsp;Every time it cleans a part where it was already clean: -1 point </br>
+  &emsp;&emsp;Completing the cleaning of the entire room: +100 points </br>
+</p>
+<p></p>
+<p>BTW… Forgive me for ascribing human terms to it: the robot is mere mathematics but this is easier to understand.</p>
+
+<p>At first, Pumba is clueless and wanders randomly, “surprised” by all rewards and penalties. Once it gets that first big bonus, it starts to learn. Its “brain”, or neural network, updates to maximize rewards. Each try, or “episode,” gets less random and more efficient, until Pumba figures out the fastest way to clean the room.</p>
+
+<p>Why not just program the best path directly? Because the environment is dynamic: there are obstacles, walking pets, and curtains to get stuck in. Pumba needs to adapt on the fly.</p>
+
+<p>Simple statistics can’t handle such complexity. Here’s where the math gets cool: the robot stores all its experiences in memory, and then learns from shuffled samples. This is much like how the human brain moves memories from short-term to long-term: by dreaming! Our brains replay shuffled experiences and tag what matters based on rewards or punishments, to improve future decisions.</p>
+
+<p>Pumba does the same thing. So-called <b>experience replay</b> really helps to fine-tune estimations of the (future) value of a given `<code>state → action → reward</code>` combo, and it keeps improving its decisions.</p>
+
+<p>See why I’m fascinated? This is just the tip of the iceberg. If you’re interested, I’d love to dive deeper. Whether it’s a technical talk or brainstorming how RL might boost your project…</p>
+
+<p><b>reach out for a cup of coffee!</b></p>
+</div>
+</div>
+</article>
+</main>
+<footer>
+<p>© 2025 Turing Tactics      kvk 97681202      btw NL005282145B80      +316 45872055      turingtactics@gmail.com </p>
+</footer>
+</body>
+</html>
