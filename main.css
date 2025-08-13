@@ -76,7 +76,7 @@ input { overflow: visible; }
 /* =========================================================
    4) Structural / Layout
    ========================================================= */
-.container { max-width: 858px; background-color: transparent; }
+.container { max-width: 858px;  background-color: transparent; }
 
 header {
   height: 10vh;
