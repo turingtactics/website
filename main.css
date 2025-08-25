@@ -313,22 +313,25 @@ nav a.lang-switch:hover {
   /* Reduce header height to remove excessive top whitespace */
   header {
     height: auto;
-    padding: 8px 12px;
+    padding: 6px 10px;
   }
 
   /* Tighten vertical rhythm between sections */
   main {
-    padding: 16px 12px;
-    margin-top: 12px;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .main:first-of-type {
+    margin-top: 0; /* smallest gap after header -> video */
   }
   .main + .main {
-    margin-top: 8px; /* smaller gap between video and logo sections */
+    margin-top: 6px; /* smaller gap between video and logo sections */
   }
 
   /* Make media blocks fill comfortably on small screens */
   .video1,
   .h1 {
-    width: 92%;
+    width: 94%;
   }
 
   /* Ensure subtitle is visible and centered on mobile */
@@ -340,8 +343,13 @@ nav a.lang-switch:hover {
     margin: 8px auto 0;
   }
 
-  /* Leave extra space for the fixed footer so logo doesn't butt up against it */
+  /* Leave more space before the fixed footer under the subtitle/logo block */
+  .main:last-of-type {
+    padding-bottom: calc(var(--footer-height) + 12vh);
+  }
+
+  /* Keep baseline clearance for fixed footer */
   body {
-    padding-bottom: calc(var(--footer-height) + 12px);
+    padding-bottom: var(--footer-height);
   }
 }
