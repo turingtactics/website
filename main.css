@@ -21,6 +21,10 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Reserve space for fixed footer across the site */
+:root {
+  --footer-height: 56px;
+}
 
 template { display: none; }
 
@@ -53,6 +57,7 @@ body {
   text-align: center;
   overflow-x: hidden;
   flex-direction: column;
+  padding-bottom: var(--footer-height); /* ensure content clears fixed footer */
 }
 
 h1 { font-size: 2em; margin: .67em 0; }
@@ -132,6 +137,7 @@ footer {
   padding: 10px 0;
   text-align: center;
   color: #838483;
+  min-height: var(--footer-height); /* define usable height */
 }
 
 /* Custom elements (if intended): header2 / header3
@@ -300,4 +306,42 @@ nav a.lang-switch:hover {
   background-color: #838483 !important;
 }
 
+/* =========================================================
+   10) Mobile adjustments
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Reduce header height to remove excessive top whitespace */
+  header {
+    height: auto;
+    padding: 8px 12px;
+  }
 
+  /* Tighten vertical rhythm between sections */
+  main {
+    padding: 16px 12px;
+    margin-top: 12px;
+  }
+  .main + .main {
+    margin-top: 8px; /* smaller gap between video and logo sections */
+  }
+
+  /* Make media blocks fill comfortably on small screens */
+  .video1,
+  .h1 {
+    width: 92%;
+  }
+
+  /* Ensure subtitle is visible and centered on mobile */
+  .subtitle {
+    font-size: 4.8vw;   /* readable on phones */
+    left: 0;            /* prevent off-screen shift */
+    text-align: center;
+    max-width: 94%;
+    margin: 8px auto 0;
+  }
+
+  /* Leave extra space for the fixed footer so logo doesn't butt up against it */
+  body {
+    padding-bottom: calc(var(--footer-height) + 12px);
+  }
+}
