@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="tag-rl-experiment" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="tag-rl-experiment" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="website" project-jdk-type="Python SDK" />
 </project>
