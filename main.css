@@ -239,7 +239,7 @@ footer {
 .blog-detail a:hover,
 .contenttext a:hover,
 .blog .contenttext a:hover {
-  background-color: #838483;
+  background-color: #A7DFAE;
 }
 
 .blog .contenttext p,
@@ -304,7 +304,7 @@ header a:first-child { display: inline-block; }
 nav a.lang-switch { color: #A7DFAE; }
 
 nav a.lang-switch:hover {
-  background-color: #838483 !important;
+  background-color: #A7DFAE !important;
 }
 
 /* =========================================================
