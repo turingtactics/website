@@ -296,6 +296,18 @@ z-index: -1;
 pointer-events: none;
 }
 
+.content-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-side img {
+  max-width: 250px;
+  height: auto;
+  margin-left: 2rem;
+}
+
 header a:first-child { display: inline-block; }
 
 /* =========================================================
