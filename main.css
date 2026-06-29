@@ -1,289 +1,369 @@
-/* Colors */
-:root {
-    --green-bright: #A7DFAE;
-    --green-light: #EDF8EE;
-    --grey-dark: #838483;
-    --grey-light: #c9c9c9;
-}
 
+/* #A7DFAE - bright green */
+/* #EDF8EE - light green */
+/* #838483 - dark grey */
+/* #c9c9c9 - light grey */
+
+
+/* =========================================================
+   1) Reset / Normalize
+   ========================================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
 }
 
+:before { box-sizing: inherit; } /* (kept from original) */
+
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+/* Reserve space for fixed footer across the site */
+:root {
+  --footer-height: 56px;
+}
+
+template { display: none; }
+
+strong { font-weight: bolder; }
+
+small { font-size: 100%; }
+
+img { max-width: 100%; }
+
+/* =========================================================
+   2) Base typography & links
+   ========================================================= */
 body {
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
-    min-height: 100vh;
-    background-color: var(--green-light);
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #838483;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #EDF8EE;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 200px 200px, 150px 150px;
+  background-position: 0 0, 50px 50px;
+  text-align: center;
+  overflow-x: hidden;
+  flex-direction: column;
+  padding-bottom: var(--footer-height); /* ensure content clears fixed footer */
 }
 
+h1 { font-size: 2em; margin: .67em 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover { background-color: #A7DFAE; }
+
+/* =========================================================
+   3) Forms
+   ========================================================= */
+
+input {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input { overflow: visible; }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* =========================================================
+   4) Structural / Layout
+   ========================================================= */
 .container {
-    position: relative;
+  max-width: 858px;
+  min-width: 858px;
+  background-color: transparent;
+}
+@media (max-width: 858px) {
+  .container {
+    min-width: auto; /* remove the min-width restriction */
+    max-width: 100%;
     width: 100%;
-    height: 100vh;
-    display: flex;
+  }
 }
 
-.layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+header {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #838483;
+  text-align: left;
+  padding: 1vw 1vw;
+  overflow: hidden;
+  background-color: transparent;
 }
 
-/* Layer 1: Background - Split into 4 parts */
-.layer-bg {
-    background-color: var(--green-light);
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+.header .container { height: 100%; }
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 10px;
+  margin-top: 50px;
+  color: #838483;
+  position: relative;
 }
 
-.layer-bg > div {
-    background-color: var(--green-bright);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    opacity: 0.5;
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #EDF8EE;
+  padding: 10px 0;
+  text-align: center;
+  color: #838483;
+  min-height: var(--footer-height); /* define usable height */
 }
 
-.layer-bg .bg-top-left:hover {
-    background-color: var(--green-bright);
-    opacity: 1;
+/* Custom elements (if intended): header2 / header3
+   If these should be classes, rename to .header2 / .header3 in HTML & here. */
+
+/* =========================================================
+   5) Components & Content Blocks
+   ========================================================= */
+.h1 {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 0 5vw;
+  box-sizing: border-box;
 }
 
-.layer-bg .bg-top-right:hover {
-    background-color: var(--green-bright);
-    opacity: 1;
+.video1 {
+  width: 60%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+  aspect-ratio: 16 / 9;
 }
 
-.layer-bg .bg-bottom-left:hover {
-    background-color: var(--green-bright);
-    opacity: 1;
+.subtitle {
+  font-size: 2vw;
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(90deg, #8a8a8a, #b0b0b0, #3c3c5c, #1a1a3c, #EDF8EE, #1a1a3c, #3c3c5c, #b0b0b0, #8a8a8a);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-top: 10px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: right;
+  position: relative;
+  left: 30%;
+  max-width: 80%;
 }
 
-.layer-bg .bg-bottom-right:hover {
-    background-color: var(--green-bright);
-    opacity: 1;
-}
-
-/* Layer 2: Tiles (hidden by default) */
-.layer-tiles {
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    pointer-events: none;
-}
-
-.tile {
-    background-color: var(--green-bright);
-    color: var(--green-bright);
-    padding: 3rem;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    pointer-events: auto;
-    max-height: 100%;
-    overflow-y: auto;
-    box-shadow: inset 0 0 0 0 rgba(167, 223, 174, 0);
-}
-
-/* Hover effect for corresponding tiles */
-.bg-top-left:hover ~ .layer-tiles .tl-top-left,
-.tl-top-left:hover {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: inset 0 0 40px rgba(167, 223, 174, 0.3);
-    background-color: var(--green-bright);
-}
-
-.bg-top-right:hover ~ .layer-tiles .tl-top-right,
-.tl-top-right:hover {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: inset 0 0 40px rgba(167, 223, 174, 0.3);
-    background-color: var(--green-bright);
-}
-
-.bg-bottom-left:hover ~ .layer-tiles .tl-bottom-left,
-.tl-bottom-left:hover {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: inset 0 0 40px rgba(167, 223, 174, 0.3);
-    background-color: var(--green-bright);
-}
-
-.bg-bottom-right-1:hover ~ .layer-tiles .tl-bottom-right-1,
-.tl-bottom-right-1:hover {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: inset 0 0 40px rgba(167, 223, 174, 0.3);
-    background-color: var(--green-bright);
-}
-.bg-bottom-right-2:hover ~ .layer-tiles .tl-bottom-right-2,
-.tl-bottom-right-2:hover {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: inset 0 0 40px rgba(167, 223, 174, 0.3);
-    background-color: var(--green-bright);
-}
-.bg-bottom-right-3:hover ~ .layer-tiles .tl-bottom-right-3,
-.tl-bottom-right-3:hover {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: inset 0 0 40px rgba(167, 223, 174, 0.3);
-    background-color: var(--green-bright);
-}
-
-.tile h2 {
-    font-size: 8rem;
-    margin-bottom: 1.5rem;
-    color: var(--grey-dark);
-    font-weight: 700;
-}
-
-.tile p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--grey-dark);
-}
-.tile strong {
-    color: var(--grey-dark);
-    font-weight: 600;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .layer-bg, .layer-tiles {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .layer-bg > div, .tile {
-        width: 100% !important;
-        height: 50vh !important;
-    }
-
-    .tile h2 {
-        font-size: 10%;
-    }
-
-    .tile p {
-        font-size: 2rem;
-    }
-}
-
-.logo {
-    width: 85%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-.linkedin {
-    width: 10%;
-    height: auto;
-    position: absolute;
-    top: 90%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-
-/* Moving light elements */
 .moving-light {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(131, 132, 131, 0) 80%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: moveLight 25s infinite alternate;
-}
-
-.moving-light-1 {
   position: absolute;
   width: 100px;
   height: 100px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(131, 132, 131, 0) 80%);
-  border-radius: 60%;
-  pointer-events: none;
-  animation: moveLight 26s infinite alternate;
-}
-.moving-light-2 {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(131, 132, 131, 0) 80%);
-  border-radius: 60%;
-  pointer-events: none;
-  animation: moveLight 27s infinite alternate;
-}
-
-.moving-light-3 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(131, 132, 131, 0) 80%);
-  border-radius: 60%;
-  pointer-events: none;
-  animation: moveLight 28s infinite alternate;
-}
-.moving-light-4 {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(151, 151, 151, 0) 80%);
-  border-radius: 60%;
-  pointer-events: none;
-  animation: moveLight 29s infinite alternate;
-}
-.moving-light-5 {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(151, 151, 151, 0) 80%);
-  border-radius: 60%;
+  background: radial-gradient(circle, rgba(151, 151, 151, 0.9) 20%, rgba(151, 151, 151, 0) 80%);
+  filter: blur(15px);
+  border-radius: 50%;
   pointer-events: none;
   animation: moveLight 30s infinite alternate;
 }
-.moving-light-6 {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-        top: 50%;
-    left: 50%;
-  background: radial-gradient(circle, rgba(167, 223, 174, 0.9) 20%, rgba(151, 151, 151, 0) 80%);
-  border-radius: 60%;
-  pointer-events: none;
-  animation: moveLight 31s infinite alternate;
-}
+
 @keyframes moveLight {
-    0%, 100% { transform: translate(-5vw, -15vh) rotate(0deg) scale(1); opacity: .8; }
-    50% { transform: translate(-30vw, -20vh) rotate(50deg) scale(1); opacity: .6; }
+  0%   { transform: translate(-5vw, -15vh) rotate(0deg)   scale(1);   opacity: 0.8; animation-timing-function: ease-in-out; }
+  10%  { transform: translate(10vw, -25vh) rotate(10deg)  scale(1.1); opacity: 0.7; animation-timing-function: ease-in-out; }
+  20%  { transform: translate(30vw, -30vh) rotate(20deg)  scale(1.05);opacity: 0.9; animation-timing-function: ease-in-out; }
+  30%  { transform: translate(20vw, 5vh)   rotate(30deg)  scale(1);   opacity: 0.6; animation-timing-function: ease-in-out; }
+  40%  { transform: translate(-20vw, 15vh) rotate(40deg)  scale(1.1); opacity: 0.7; animation-timing-function: ease-in-out; }
+  50%  { transform: translate(-30vw, -20vh)rotate(50deg)  scale(1);   opacity: 0.6; animation-timing-function: ease-in-out; }
+  60%  { transform: translate(-10vw, -10vh)rotate(40deg)  scale(1.1); opacity: 0.8; animation-timing-function: ease-in-out; }
+  70%  { transform: translate(10vw, -5vh)  rotate(30deg)  scale(1.05);opacity: 0.7; animation-timing-function: ease-in-out; }
+  80%  { transform: translate(20vw, -15vh) rotate(20deg)  scale(1);   opacity: 0.9; animation-timing-function: ease-in-out; }
+  90%  { transform: translate(5vw, -10vh)  rotate(10deg)  scale(1.1); opacity: 0.8; animation-timing-function: ease-in-out; }
+  100% { transform: translate(-5vw, -15vh) rotate(0deg)   scale(1);   opacity: 0.6; animation-timing-function: ease-in-out; }
 }
+
+/* =========================================================
+   6) Blog / CONTENTTEXT
+   ========================================================= */
+.blog-detail {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.blog-detail-title {
+  line-height: 1.57em;
+  font-size: 2em;
+}
+
+.blog-detail .contenttext p {
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+.blog-detail .contenttext li {
+  line-height: 1.7;
+}
+.blog-detail .contenttext img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.blog-detail .contenttext h2 { margin-bottom: 20px; }
+
+/* Consolidated blog hover states (kept specificity broad) */
+.blog-detail a:hover,
+.contenttext a:hover,
+.blog .contenttext a:hover {
+  background-color: #A7DFAE;
+}
+
+.blog .contenttext p,
+.blog .blog-detail-title,
+.blog .contenttext a { color: #838483; }
+
+/* =========================================================
+   7) Utility / Alignment helpers
+   ========================================================= */
+.text-left main {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.text-left .contenttext {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.text-left .blog-detail-title,
+.text-left h1 { text-align: left; }
+
+.text-left article.blog-detail > div.container > header,
+.text-left article.blog-detail > div.container > header *,
+.text-left article.blog-detail .blog-detail-title,
+.text-left main .blog-detail-title,
+.text-left main header h1 {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.text-left article h1 { text-align: left !important; }
+
+/* =========================================================
+   8) Misc elements
+   ========================================================= */
+
+.site-logo {
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.background-image {
+position: absolute;
+top: 5%;
+right: 15%;
+max-width: auto;
+max-height: 60%;
+z-index: -1;
+pointer-events: none;
+}
+
+.content-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-side img {
+  max-width: 250px;
+  height: auto;
+  margin-left: 2rem;
+}
+
+header a:first-child { display: inline-block; }
+
+/* =========================================================
+   9) Navigation / Language switch
+   ========================================================= */
+nav a.lang-switch { color: #A7DFAE; }
+
+nav a.lang-switch:hover {
+  background-color: #A7DFAE !important;
+}
+
+/* =========================================================
+   10) Mobile adjustments
+   ========================================================= */
+@media (max-width: 600px) {
+  /* Reduce header height to remove excessive top whitespace */
+  header {
+    height: auto;
+    padding: 6px 10px;
+  }
+
+  /* Tighten vertical rhythm between sections */
+  main {
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+  .main:first-of-type {
+    margin-top: 0; /* smallest gap after header -> video */
+  }
+  .main + .main {
+    margin-top: 6px; /* smaller gap between video and logo sections */
+  }
+
+  /* Make media blocks fill comfortably on small screens */
+  .video1,
+  .h1 {
+    width: 94%;
+  }
+
+  /* Ensure subtitle is visible and centered on mobile */
+  .subtitle {
+    font-size: 4.8vw;   /* readable on phones */
+    left: 0;            /* prevent off-screen shift */
+    text-align: center;
+    max-width: 94%;
+    margin: 8px auto 0;
+  }
+
+  /* Leave more space before the fixed footer under the subtitle/logo block */
+  .main:last-of-type {
+    padding-bottom: calc(var(--footer-height) + 12vh);
+  }
+
+  /* Keep baseline clearance for fixed footer */
+  body {
+    padding-bottom: var(--footer-height);
+  }
+}
+
